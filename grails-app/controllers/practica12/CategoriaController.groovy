@@ -2,8 +2,13 @@ package practica12
 
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
+import org.springframework.security.access.annotation.Secured
 
+
+@Secured(['ROLE_ADMIN'])
 class CategoriaController {
+
+    def springSecurityService
 
     CategoriaService categoriaService
 
