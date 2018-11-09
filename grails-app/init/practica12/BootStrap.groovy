@@ -2,12 +2,13 @@ package practica12
 
 class BootStrap {
 
+
     def springSecurityService
 
     def init = { servletContext ->
         Usuario admin = new Usuario(
                 username: "admin",
-                password: "admin"
+                password: springSecurityService.encodePassword("admin")
         ).save(failOnError: true)
 
         def rolAdmin = new Rol(authority: "ROLE_ADMIN").save(failOnError: true)

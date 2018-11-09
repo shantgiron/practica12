@@ -7,6 +7,8 @@ class UsuarioController {
 
     UsuarioService usuarioService
 
+    def springSecurityService
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -29,6 +31,7 @@ class UsuarioController {
         }
 
         try {
+            usuario.password = springSecurityService.encodePassword(usuario.password)
             usuarioService.save(usuario)
         } catch (ValidationException e) {
             respond usuario.errors, view:'create'
