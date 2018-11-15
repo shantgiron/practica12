@@ -36,6 +36,14 @@
                 <li><a href="categoria/index">Ver Categorias</a></li>
             </ul>
         </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sesion <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><g link controller='LogOutController'>Cerrar Sesion</g></li>
+            </ul>
+        </li>
+
+
     </content>
 
 

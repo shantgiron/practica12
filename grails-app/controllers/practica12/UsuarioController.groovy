@@ -2,6 +2,7 @@ package practica12
 
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
+import grails.plugin.springsecurity.annotation.Secured
 
 class UsuarioController {
 
@@ -11,19 +12,23 @@ class UsuarioController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    @Secured('ROLE_ADMIN')
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond usuarioService.list(params), model:[usuarioCount: usuarioService.count()]
     }
 
+    @Secured('ROLE_ADMIN')
     def show(Long id) {
         respond usuarioService.get(id)
     }
 
+    @Secured('ROLE_ADMIN')
     def create() {
         respond new Usuario(params)
     }
 
+    @Secured('ROLE_ADMIN')
     def save(Usuario usuario) {
         if (usuario == null) {
             notFound()
@@ -47,10 +52,12 @@ class UsuarioController {
         }
     }
 
+    @Secured('ROLE_ADMIN')
     def edit(Long id) {
         respond usuarioService.get(id)
     }
 
+    @Secured('ROLE_ADMIN')
     def update(Usuario usuario) {
         if (usuario == null) {
             notFound()
@@ -73,6 +80,7 @@ class UsuarioController {
         }
     }
 
+    @Secured('ROLE_ADMIN')
     def delete(Long id) {
         if (id == null) {
             notFound()
