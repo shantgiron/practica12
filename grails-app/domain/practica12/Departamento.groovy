@@ -16,7 +16,7 @@ class Departamento {
         nombre unique: true
         createdBy nullable: true, display: false, editable: false
         lastUpdatedBy nullable: true, display: false, editable: false
-        contacto editable: false
+        contacto editable: false, display:false
     }
 
     @Override
