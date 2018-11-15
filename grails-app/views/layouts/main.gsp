@@ -25,9 +25,8 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <div class="navbar-brand">
-                Practica # 12 - Grails
-                </div>
+                    <h1 style="color:white">Practica # 12 - Grails</h1>
+
 
             </div>
             <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
